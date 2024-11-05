@@ -1,12 +1,22 @@
-import { Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { HomeEmpleado } from "../../trabajador/views/Home";
+import { NavbarVendedor } from "../../components/Navbar-vendedor";
 
 export const EmpleadoRouter = () => {
   return (
-    <Routes>
-      {/* Inicio  */}
-      {/* Agregar visita  */}
-      {/* Hoja de ruta  */}
-      {/* Desempeño  */}
-    </Routes>
+    <>
+      <NavbarVendedor />
+      <Routes>
+        {/* Inicio  */}
+        <Route path="home" element={<HomeEmpleado />} />
+        {/* Agregar visita  */}
+        {/* Hoja de ruta  */}
+        {/* Desempeño  */}
+        <Route
+          path="*"
+          element={<Navigate to="/vendedor/home" />}
+        />
+      </Routes>
+    </>
   );
 };

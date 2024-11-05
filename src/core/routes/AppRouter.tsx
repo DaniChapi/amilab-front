@@ -1,17 +1,17 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { LoginView } from "../../auth/views/LoginView";
-import { HomeViewJefe } from "../../jefe/views/HomeViewJefe";
-import { NavbarJefe } from "../../components/Navbar-Jefe";
-
+import { JefeRouter } from "./JefeRouter";
+import { EmpleadoRouter } from "./EmpleadoRouter";
 export const AppRouter = () => {
   //useSelector
 
   return (
     <>
-      <NavbarJefe />
       <Routes>
         <Route path="/login" element={<LoginView />} />
-        <Route path="/home-jefe" element={<HomeViewJefe />} />
+        <Route path="/jefe/*" element={<JefeRouter />} />
+        <Route path="/vendedor/*" element={<EmpleadoRouter />} />
+
         <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </>
