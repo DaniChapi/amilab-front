@@ -1,6 +1,12 @@
+import { Navigate } from "react-router-dom";
 import logo from "../../assets/logo-amilab.jpg";
 
 export const LoginView = () => {
+  const Login = (e :any) => {
+    e.preventDefault();
+    
+    return <Navigate to={'jefe/home'} />
+  }
   return (
     <div className="bg-[#ffffff] min-h-screen min-w-screen flex flex-row justify-center items-center p-3">
       <div className="flex flex-col bg-[#FEFEFE] border border-[#BBBBBB] p-4 rounded-xl">
@@ -9,7 +15,7 @@ export const LoginView = () => {
           alt="logo empresa"
           className="block w-1/2 mx-auto"
         />
-        <form className="flex flex-col mt-3">
+        <form className="flex flex-col mt-3" onSubmit={Login}>
           <input
             type="text"
             placeholder="Usuario"
