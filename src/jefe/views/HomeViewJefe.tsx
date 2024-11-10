@@ -1,20 +1,32 @@
-import { SlArrowDown, SlClose } from "react-icons/sl";
-import { Venta } from "../../components/ventas/Venta";
 import { useEffect, useRef, useState } from "react";
+import { SlArrowDown, SlClose } from "react-icons/sl";
 import autoAnimate from "@formkit/auto-animate";
+import { Venta } from "../../components/ventas/Venta";
 
 export const HomeViewJefe = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenMMG, setIsOpenMMG] = useState(false);
+  const [isOpenHGC, setIsOpenHGC] = useState(false);
 
-  const handleOpen = () => {
-    setIsOpen(!isOpen);
+  const handleOpenMMG = () => {
+    setIsOpenMMG(!isOpenMMG);
   };
-  const parent = useRef(null);
+
+  const handleOpenHGC = () => {
+    setIsOpenHGC(!isOpenHGC);
+  };
+
+  const vendedorMMG = useRef(null);
+  const vendedorHGC = useRef(null);
 
   useEffect(() => {
-    parent.current &&
-      autoAnimate(parent.current, { duration: 200 });
-  }, [parent]);
+    vendedorMMG.current &&
+      autoAnimate(vendedorMMG.current, { duration: 200 });
+  }, [vendedorMMG]);
+
+  useEffect(() => {
+    vendedorHGC.current &&
+      autoAnimate(vendedorHGC.current, { duration: 200 });
+  }, [vendedorHGC]);
 
   return (
     <div className="p-4">
@@ -27,18 +39,31 @@ export const HomeViewJefe = () => {
         />
       </form>
 
-      <div className="flex flex-col" ref={parent}>
+      <div className="flex flex-col" ref={vendedorMMG}>
         <div
           className="bg-[#B8E8FC] rounded-md flex justify-between p-2 items-center mb-2"
-          onClick={handleOpen}
+          onClick={handleOpenMMG}
         >
           <h2 className="p-1">Vendedor MMG</h2>
           <span className="block pr-2 transition-all">
-            {isOpen ? <SlClose /> : <SlArrowDown />}
+            {isOpenMMG ? <SlClose /> : <SlArrowDown />}
           </span>
         </div>
 
-        {isOpen && <Venta />}
+        {isOpenMMG && <Venta />}
+      </div>
+
+      <div className="flex flex-col mt-2" ref={vendedorHGC}>
+        <div
+          className="bg-[#B8E8FC] rounded-md flex justify-between p-2 items-center mb-2"
+          onClick={handleOpenHGC}
+        >
+          <h2 className="p-1">Vendedor HGC</h2>
+          <span className="block pr-2 transition-all">
+            {isOpenHGC ? <SlClose /> : <SlArrowDown />}
+          </span>
+        </div>
+        {isOpenHGC && <Venta />}
       </div>
     </div>
   );
