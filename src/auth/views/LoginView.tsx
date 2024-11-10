@@ -1,12 +1,12 @@
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo-amilab.jpg";
 
 export const LoginView = () => {
-  const Login = (e :any) => {
-    e.preventDefault();
-    
-    return <Navigate to={'jefe/home'} />
-  }
+  const navigate = useNavigate();
+
+  const Login = () => {
+    navigate("/jefe/home", { replace: true });
+  };
   return (
     <div className="bg-[#ffffff] min-h-screen min-w-screen flex flex-row justify-center items-center p-3">
       <div className="flex flex-col bg-[#FEFEFE] border border-[#BBBBBB] p-4 rounded-xl">

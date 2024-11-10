@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { HomeEmpleado } from "../../trabajador/views/Home";
-import { NavbarVendedor } from "../../components/Navbar-vendedor";
+import { NavbarVendedor } from "../../components/ui/Navbar-vendedor";
 
 export const EmpleadoRouter = () => {
   return (

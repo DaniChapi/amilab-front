@@ -37,7 +37,7 @@ export const NavbarJefe = () => {
           className="flex flex-col items-center text-gray-600 hover:text-blue-500"
         >
           <SlWallet />
-          <span className="text-xs">Gestion de ventas</span>
+          <span className="text-xs">Ventas</span>
         </NavLink>
       </div>
     </nav>

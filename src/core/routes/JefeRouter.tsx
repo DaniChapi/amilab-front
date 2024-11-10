@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { NavbarJefe } from "../../components/Navbar-Jefe";
+import { NavbarJefe } from "../../components/ui/Navbar-Jefe";
 import { HomeViewJefe } from "../../jefe/views/HomeViewJefe";
 
 export const JefeRouter = () => {
