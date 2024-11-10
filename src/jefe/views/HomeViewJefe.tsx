@@ -1,4 +1,5 @@
 import { Acordeon } from "../../components/ui/Acordeon";
+import { Venta } from "../../components/ventas/Venta";
 
 export const HomeViewJefe = () => {
   return (
@@ -11,9 +12,15 @@ export const HomeViewJefe = () => {
           placeholder="Buscar"
         />
       </form>
-      <Acordeon nombreVendedor="Vendedir MMG" />
-      <Acordeon nombreVendedor="Vendedir HGC" />
-      <Acordeon nombreVendedor="Vendedir GCP" />
+      <Acordeon nombreVendedor="Vendedir MMG">
+        <Venta />
+      </Acordeon>
+      <Acordeon nombreVendedor="Vendedir HGC">
+        <Venta />
+      </Acordeon>
+      <Acordeon nombreVendedor="Vendedir GCP">
+        <Venta />
+      </Acordeon>
     </div>
   );
 };

@@ -1,13 +1,21 @@
-import { useEffect, useRef, useState } from "react";
+import {
+  Children,
+  PropsWithChildren,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { SlArrowDown, SlClose } from "react-icons/sl";
-import { Venta } from "../ventas/Venta";
 import autoAnimate from "@formkit/auto-animate";
 
-interface AcordeonProps {
+interface AcordeonProps extends PropsWithChildren {
   nombreVendedor: string;
 }
 
-export const Acordeon = ({ nombreVendedor }: AcordeonProps) => {
+export const Acordeon = ({
+  nombreVendedor,
+  children,
+}: AcordeonProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpenMMG = () => {
@@ -32,7 +40,7 @@ export const Acordeon = ({ nombreVendedor }: AcordeonProps) => {
         </span>
       </div>
 
-      {isOpen && <Venta />}
+      {isOpen && children}
     </div>
   );
 };
