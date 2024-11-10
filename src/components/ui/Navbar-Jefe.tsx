@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
-import { SlHome, SlUser, SlMap, SlWallet } from "react-icons/sl";
+import { SlHome, SlUser, SlWallet } from "react-icons/sl";
 
 export const NavbarJefe = () => {
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white shadow-md py-2">
+    <nav className="fixed bottom-0 left-0 right-0 bg-white shadow-md py-2 z-10">
       <div className="flex justify-around items-center">
         {/* Inicio */}
         <NavLink
@@ -23,14 +23,6 @@ export const NavbarJefe = () => {
           <span className="text-xs">Clientes</span>
         </NavLink>
 
-        {/* Hoja de ruta */}
-        <NavLink
-          to="/jefe/rutas"
-          className="flex flex-col items-center text-gray-600 hover:text-blue-500 "
-        >
-          <SlMap />
-          <span className="text-xs">Hoja de ruta</span>
-        </NavLink>
         {/* Desempeño */}
         <NavLink
           to="/jefe/ventas"
