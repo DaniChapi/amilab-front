@@ -1,0 +1,191 @@
+/* App.css */
+
+.app {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: center; /* Centra el título horizontalmente */
+  align-items: center;
+  padding: 20px;
+  position: relative; /* Posición relativa para el botón */
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Estilo para el título "Ventas" */
+.vendedor-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  text-align: left; /* Alineación a la izquierda */
+}
+
+.totales-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  text-align: left; /* Alineación a la izquierda */
+}
+
+/* Estilo para el botón "Ventas Totales" */
+.totales-button {
+  background-color: #32cd32; /* Color verde */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  position: absolute;
+  right: 30px; /* Ubica el botón al extremo derecho */
+  top: 1;
+}
+
+.vendor-button {
+  background-color: #32cd32; /* Color verde */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  position: absolute;
+  right: 30px; /* Ubica el botón al extremo derecho */
+  top: 1;
+}
+
+/* Botón "Año 2024" */
+.year-button {
+  background-color: #ff8c00;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Triángulo negro en "Año 2024" */
+.year-button::after {
+  content: '▲';
+  font-size: 14px;
+  margin-left: 8px;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.year-button[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
+/* Botón de cada mes */
+.month-button {
+  background-color: #a7d9f8;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 200px;
+  height: 50px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.month-button::after {
+  content: '▲';
+  font-size: 12px;
+  margin-left: 8px;
+  color: black;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.month-button.active::after {
+  transform: rotate(180deg);
+}
+
+.month-button.active {
+  background-color: #87cefa;
+}
+
+.content {
+  margin-top: 20px;
+}
+
+.line-chart, .bar-chart, .doughnut-chart {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+
+/* App.css */
+
+.vendedor-button {
+  background-color: #835117; /* Verde */
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.year-button {
+  background-color: #ff8c00;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  max-width: 180px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.month-button {
+  background-color: #a7d9f8;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 160px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.month-button.active, .year-button.active, .vendedor-button.active {
+  background-color: #32cd32;
+}
+
+.month-dropdowns, .year-dropdowns, .vendedor-dropdowns {
+  margin-top: 10px;
+}
+
+
+
+
