@@ -1,33 +1,55 @@
-// Ventas.tsx
-import React, { useState } from 'react';
-import VentasTotales from './VentasTotales';
-import VentasPorVendedor from './VentasPorVendedor';
-import './App.css';
+import { Char } from "../../components/ui/chars/Char";
 
-const Ventas: React.FC = () => {
-  const [showVentasPorVendedor, setShowVentasPorVendedor] = useState(false);
+const meses = [
+  "Enero",
+  "Febrero",
+  "Marzo",
+  "Abril",
+  "Mayo",
+  "Junio",
+  "Julio",
+  "Agosto",
+  "Septiembre",
+  "Octubre",
+  "Noviembre",
+  "Diciembre",
+];
+const anios = ["2024", "2023", "2022"];
 
-  // Función para alternar entre las vistas
-  const toggleView = () => {
-    setShowVentasPorVendedor(!showVentasPorVendedor);
-  };
+const vendedores = ["MMG", "HGC", "GCP"];
 
+export const Ventas = () => {
   return (
-    <div className="app">
-      <header className="header">
-        <h1 className="ventas-title">Ventas</h1>
-      </header>
+    <div className="w-full mt-5 p-4">
+      <div className="flex flex-wrap md:flex-nowrap justify-center md:gap-3">
+        <select className="appearance-none w-full md:w-1/3 mb-4 border-blue-900  p-2 rounded-md border">
+          {anios.map((anio) => (
+            <option key={anio} value={anio}>
+              {anio}
+            </option>
+          ))}
+        </select>
 
-      <section className="content">
-        {/* Renderizado condicional de las vistas */}
-        {showVentasPorVendedor ? (
-          <VentasPorVendedor onToggleView={toggleView} />
-        ) : (
-          <VentasTotales onToggleView={toggleView} />
-        )}
-      </section>
+        <select className="appearance-none w-full md:w-1/3 mb-4 border-blue-900  p-2 rounded-md border">
+          {meses.map((mes) => (
+            <option key={mes} value={mes}>
+              {mes}
+            </option>
+          ))}
+        </select>
+
+        <select className="appearance-none w-full md:w-1/3 mb-4 border-blue-900  p-2 rounded-md border">
+          {vendedores.map((vendedor) => (
+            <option key={vendedor} value={vendedor}>
+              {vendedor}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div>
+        <Char />
+      </div>
     </div>
   );
 };
-
-export default Ventas;
