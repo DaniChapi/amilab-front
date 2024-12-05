@@ -46,7 +46,6 @@ export const Ventas = () => {
           ))}
         </select>
       </div>
-
       <div>
         <Char />
       </div>
