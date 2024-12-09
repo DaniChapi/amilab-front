@@ -13,13 +13,13 @@ export const HomeViewJefe = () => {
         />
       </form>
       <Acordeon nombreVendedor="Vendedir MMG">
-        <Venta />
+        <Venta nombre="Vendedor MMG" />
       </Acordeon>
       <Acordeon nombreVendedor="Vendedir HGC">
-        <Venta />
+        <Venta nombre="Vendedor HGC" />
       </Acordeon>
       <Acordeon nombreVendedor="Vendedir GCP">
-        <Venta />
+        <Venta nombre="Vendedor GCP" />
       </Acordeon>
     </div>
   );

@@ -1,10 +1,6 @@
 import { NavLink } from "react-router-dom";
-import {
-  SlHome,
-  SlEarphones,
-  SlMap,
-  SlWallet,
-} from "react-icons/sl";
+import { SlHome, SlMap, SlWallet } from "react-icons/sl";
+import { IoAddCircleOutline } from "react-icons/io5";
 
 export const NavbarVendedor = () => {
   return (
@@ -12,7 +8,7 @@ export const NavbarVendedor = () => {
       <div className="flex justify-around items-center">
         {/* Inicio */}
         <NavLink
-          to="/jefe/home"
+          to="/vendedor/home"
           className="flex flex-col items-center text-gray-600 hover:text-blue-500"
         >
           <SlHome />
@@ -21,16 +17,16 @@ export const NavbarVendedor = () => {
 
         {/* Buscar */}
         <NavLink
-          to="/jefe/clientes"
+          to="/vendedor/visita"
           className="flex flex-col items-center text-gray-600 hover:text-blue-500"
         >
-          <SlEarphones />
+          <IoAddCircleOutline className="text-xl" />
           <span className="text-xs">Agregar visita</span>
         </NavLink>
 
         {/* Hoja de ruta */}
         <NavLink
-          to="/jefe/rutas"
+          to="/vendedor/rutas"
           className="flex flex-col items-center text-gray-600 hover:text-blue-500 "
         >
           <SlMap />
@@ -38,11 +34,11 @@ export const NavbarVendedor = () => {
         </NavLink>
         {/* Desempeño */}
         <NavLink
-          to="/jefe/ventas"
+          to="/vendedor/ventas"
           className="flex flex-col items-center text-gray-600 hover:text-blue-500"
         >
           <SlWallet />
-          <span className="text-xs">Desempeño</span>
+          <span className="text-xs">Ventas</span>
         </NavLink>
       </div>
     </nav>

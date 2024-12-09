@@ -1,11 +1,17 @@
+import { FC } from "react";
 import { RiCircleLine } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
 
-export const Venta = () => {
+interface VentaProps {
+  nombre: string;
+  acciones?: string[];
+}
+
+export const Venta: FC<VentaProps> = ({ nombre }) => {
   return (
     <>
       <div className="bg-[#DFCCFB] p-2 rounded-md">
-        <h2 className="text-center text-xl">Nombre cliente</h2>
+        <h2 className="text-center text-xl">{nombre}</h2>
         <h3>Ultimas acciones:</h3>
         <div className="flex items-center">
           <span className="block px-2">
