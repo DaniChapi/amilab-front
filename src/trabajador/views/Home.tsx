@@ -1,3 +1,6 @@
+import { Acordeon } from "../../components/ui/Acordeon";
+import { Venta } from "../../components/ventas/Venta";
+
 export const HomeEmpleado = () => {
   return (
     <div className="p-3">
@@ -12,6 +15,19 @@ export const HomeEmpleado = () => {
         <div className="bg-[#DFCCFB] w-20 h-7 p-2 rounded-md leading-none text-[#33333] text-sm text-center">
           Cotizado
         </div>
+      </div>
+
+      <div className="mt-5">
+        <Acordeon nombreVendedor="Cliente top 1">
+          <div className=" p-2 w-full bg-[#DFCCFB] rounded-md">
+            <Venta nombre="Cliente Generico 1" />
+          </div>
+        </Acordeon>
+        <Acordeon nombreVendedor="Cliente top 2">
+          <div className=" p-2 w-full bg-[#DFCCFB] rounded-md">
+            <Venta nombre="Cliente Generico 2" />
+          </div>
+        </Acordeon>
       </div>
     </div>
   );

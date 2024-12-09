@@ -5,7 +5,7 @@ export const LoginView = () => {
   const navigate = useNavigate();
 
   const Login = () => {
-    navigate("/jefe/home", { replace: true });
+    navigate("/vendedor/home", { replace: true });
   };
   return (
     <div className="bg-[#ffffff] min-h-screen min-w-screen flex flex-row justify-center items-center p-3">
