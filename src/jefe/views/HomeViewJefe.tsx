@@ -12,14 +12,14 @@ export const HomeViewJefe = () => {
           placeholder="Buscar"
         />
       </form>
-      <Acordeon nombreVendedor="Vendedir MMG">
-        <Venta nombre="Vendedor MMG" />
+      <Acordeon nombreVendedor="MMG">
+        <Venta vendedorAsignado="MMG" />
       </Acordeon>
-      <Acordeon nombreVendedor="Vendedir HGC">
-        <Venta nombre="Vendedor HGC" />
+      <Acordeon nombreVendedor="HGC">
+        <Venta vendedorAsignado="HGC" />
       </Acordeon>
-      <Acordeon nombreVendedor="Vendedir GCP">
-        <Venta nombre="Vendedor GCP" />
+      <Acordeon nombreVendedor="GCP">
+        <Venta vendedorAsignado="GCP" />
       </Acordeon>
     </div>
   );
