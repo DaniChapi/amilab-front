@@ -15,19 +15,36 @@ export const LoginView = () => {
   const handleLogin = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setErrorMessage("");
-
+  
     try {
-      const { error } = await client.auth.signInWithPassword({
+      const { data: { user }, error } = await client.auth.signInWithPassword({
         email,
         password,
       });
-
+  
       if (error) {
         throw error;
       }
-
-      // Si el login es exitoso, navega a la página principal
-      navigate("/jefe/home", { replace: true });
+  
+      // Obtener el rol del usuario
+      const { data, error: roleError } = await client
+        .from('users')
+        .select('role')
+        .eq('email', user?.email)
+        .single();
+  
+      if (roleError || !data) {
+        throw new Error("No se pudo obtener el rol del usuario.");
+      }
+  
+      // Navegar según el rol
+      if (data.role === 'jefe') {
+        navigate("/jefe/home", { replace: true });
+      } else if (data.role === 'vendedor') {
+        navigate("/vendedor/home", { replace: true });
+      } else {
+        throw new Error("Rol no autorizado.");
+      }
     } catch (error) {
       setErrorMessage("Credenciales incorrectas. Por favor, intenta nuevamente.");
     }
@@ -40,7 +57,7 @@ export const LoginView = () => {
     setSuccessMessage("");
 
     try {
-      const { error } = await client.auth.signUp({
+      const { data: signUpData, error: signUpError } = await client.auth.signUp({
         email,
         password,
         options: {
@@ -48,8 +65,21 @@ export const LoginView = () => {
         },
       });
 
-      if (error) {
-        throw error;
+      if (signUpError) {
+        throw signUpError;
+      }
+
+      // Insertar el rol de usuario
+      const { error: insertError } = await client
+        .from('users')
+        .insert({
+          id: signUpData.user?.id,
+          email,
+          role: 'vendedor' // O el rol que quieras asignar por defecto
+        });
+
+      if (insertError) {
+        throw insertError;
       }
 
       setSuccessMessage("Registro exitoso. Revisa tu correo para verificar tu cuenta.");

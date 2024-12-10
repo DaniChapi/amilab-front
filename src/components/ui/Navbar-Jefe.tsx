@@ -31,6 +31,16 @@ export const NavbarJefe = () => {
           <SlWallet />
           <span className="text-xs">Ventas</span>
         </NavLink>
+        
+        {/* Importar CSV */}
+        <NavLink
+          to="/jefe/importar"
+          className="flex flex-col items-center text-gray-600 hover:text-blue-500"
+        >
+          <SlWallet />
+          <span className="text-xs">importar</span>
+        </NavLink>
+        
       </div>
     </nav>
   );
