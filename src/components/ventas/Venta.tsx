@@ -119,7 +119,7 @@ export const Venta = ({ vendedorAsignado }: VentaProps) => {
       return null;
     })
     .filter((item) => item !== null);
-
+  console.log("");
   return (
     <div>
       {combinedData.map((data, id) => (
