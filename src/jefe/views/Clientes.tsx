@@ -1,7 +1,7 @@
 export const Clientes = () => {
   return (
     <div className="p-4">
-      <div className="flex flex-wrap flex-col md:gap-4">
+      <div className="flex flex-wrap md:flex-nowrap flex-row justify-between md:gap-4">
         <select className=" w-full md:w-1/2 mb-4 border border-blue-900  p-2 rounded-md">
           <option value="nada" defaultValue={""} disabled>
             Seleccione un cliente
